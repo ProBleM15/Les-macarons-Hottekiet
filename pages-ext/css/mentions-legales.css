@@ -1,0 +1,14 @@
+.mentions-legales {
+    padding-top: 120px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+p {
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#footer {
+    margin-top: 50px;
+}

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="./css/parfums.css"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <!--LIEN JS - BANNIERE COOKIES -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="ca1e56fc-8b6e-4977-947d-0017e3c8759e"  type="text/javascript"></script>
+    
+    <title>Les macarons Hottekiet | Angers</title>
+    <link rel="icon" href="../images/icon.png" type="image/png">
+</head>
+<body>
+    <!-- ============================================ -->
+    <!--                 NAVIGATION                   -->
+    <!-- ============================================ -->
+    <header id="cs-navigation">
+        <div class="cs-container">
+            <a href="../index.html" class="cs-logo" aria-label="back to home">
+                <img src="../images/logo-black.png" alt="logo">
+            </a>
+            <nav class="cs-nav" role="navigation">
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        <li class="cs-li">
+                            <a href="../index.html#tableau" class="cs-li-link">
+                                Notre Gamme
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="./about.html" class="cs-li-link">
+                                À propos de nous
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="./parfums.html" class="cs-li-link">
+                                Parfums/Allergies
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="../index.html#boutiques" class="cs-li-link">
+                                Boutiques
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="./galerie.html" class="cs-li-link">
+                                Galerie
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="../index.html#contact" class="cs-li-link">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <a href="" class="cs-button-solid cs-nav-button">Commander</a>                     
+        </div>                              
+    </header>
+    
+    <!-- ============================================ -->
+    <!--            LISTE DES PARFUMS                 -->
+    <!-- ============================================ -->
+    <section id="menu">
+        <div class="cs-container">
+            <div class="cs-content">
+                <picture class="cs-wrapper" aria-hidden="true">
+                    <img class="cs-decal" src="../images/decal.png" decoding="async" alt="decal" width="181" height="36">
+                </picture>
+                <h2 class="cs-title">NOS MACARONS</h2>
+                <input type="text" id="searchInput" placeholder="Rechercher par nom...">
+            </div>
+            <div id="suggestions"></div>
+            <div  id="liste-sucres">
+                <span class="cs-topper">LISTE DES</span>
+                <h2 class="cs-title">SUCRÉS</h2>
+            </div>
+            <ul id="productList" class="cs-card-group">
+                <!-- MACARON AMANDE -->
+                <li class="cs-item" id="amande">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/amende.png" alt="macaron amande">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Amande</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, chocolat au lait saveur caramel 0.7%, beurre de cacao, poudre de <strong>lait</strong> entier, pâte de cacao, lécithine de <strong>soja</strong>, arômes, <strong>amandes</strong> torréfiés 30%, cacao maigre en poudre.
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON ANGEVIN -->
+                <li class="cs-item" id="angevin">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/angevin.png" alt="macaron angevin">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Angevin</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), Conservateur (E202), épaississant (E402) et (E415), eau, sucre, beurre de cacao, poudre de <strong>lait</strong> entier, poudre de <strong>lait</strong> écrémé, émulsifiant (lécithine de tournesol) arôme vanille (peut contenir des traces de gluten et d’arachides), crème de <strong>lait</strong>, stabilisant : carraghénanes. Colorant bleu indigo (E132) -> carmin d’indigo 85% et Chlorure de sulfate de sodium 15%.
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON BERGAMOTE -->
+                <li class="cs-item" id="bergamote">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/bergamote.png" alt="macaron bergamote">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Bergamote</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, <strong>lait</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202) épaississant (E402) et (E415), eau, matières grasses : acides gras saturés, glucides, sucre, protéines, sel ,<strong>graines de sésames noir</strong>, tartrazine 87%, chlorure et sulfate de sodium 13%, bergamote, colorant jaune citron (E102).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CAFE -->
+                <li class="cs-item" id="cafe">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/cafe.png" alt="macron cafe">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Café</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202) épaississant (E402) et (E415), eau, sucre, matières grasses (acides gras saturés), glucides, sucre, protéines, sel, café pur 100%.
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CARAMEL BEURRE SALE -->
+                <li class="cs-item" id="caramel-beurre-sale">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/cbs.png" alt="macaron caramel beurre salé">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Caramel Beurre Salé</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331) conservateur (E202) épaississant (E402) et (E415) eau, sucre, crème de <strong>lait</strong>, stabilisant carraghénanes, matières grasse : acides gras saturés, glucides, sucre, protéines, sel, colorants (E102), (E129) et (E151).
+                        </p>
+                    </div>
+                </li>
+                
+                <!-- MACARON CASSIS -->
+                <li class="cs-item" id="cassis">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/cassis.png" alt="macaron cassis">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Cassis</span>
+                            <span class="cs-price">
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202) épaississant (E402) et (E415), eau, sucre, matières grasses (acides gras saturés), glucides, sucre, protéines, sel, <strong>lait</strong>, cassis, colorant alimentaire (E122) et (E132).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON BONBON AU CARAMEL -->
+                <li class="cs-item" id="bonbon-au-caramel">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/bonbon_caramel.png" alt="macaron bonbon au caramel">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Bonbon au Caramel</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, sirop de glucose, <strong>lait</strong> écrémé concentré sucré, sucre, huile de palme, cacao amer en poudre, sel, émulsifiants (E471) lécithine de tournesol, arômes, matières grasse : acides gras saturés, glucides, sucre, protéines, sel, colorant (E102), (E122), (E129), (E131) et (E151).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CHOCOLAT -->
+                <li class="cs-item" id="chocolat">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/chocolat.png" alt="macaron chocolat">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Chocolat</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202) épaississant (E402) et (E415), eau, sucre, pâte de cacao, sucre, beurre de cacao, émulsifiants : lécithine de tournesol, arôme naturel, crème de <strong>lait</strong>, stabilisant carraghénanes, colorant (E102), (E129) et (E151).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CHOCOLAT BLANC -->
+                <li class="cs-item" id="choco-blanc">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/choco_blanc.png" alt="macaron chocolat blanc">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Chocolat Blanc</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre sucre, beurre de cacao, poudre de <strong>lait</strong> entier, poudre de <strong>lait</strong> écrémé, émulsifiant, <strong>soja</strong>, lécithine de tournesol, carraghénanes.
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CHOCOLAT CARAMEL CACAHUETE -->
+                <li class="cs-item" id="chocolat-caramel-cacahuete">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/Choco_cacahuete.png" alt="macaron chocolat caramel cacahuète">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Chocolat caramel cacahuète</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), pâte de cacao, beurre de cacao, émulsifiant, lécithine de tournesol, arôme naturel, cacahuète, eau, sucre, pâte de cacao, sucre, beurre de cacao, émulsifiants : lécithine de tournesol, arôme naturel, crème de <strong>lait</strong>, stabilisant carraghénanes, colorant alimentaire (E102), (E129) et (E151).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CERISE -->
+                <li class="cs-item" id="cerise">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/cerise.png" alt="macaron cerise">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Cerise</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, cerise colorant (E129) et (E133).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CITRON -->
+                <li class="cs-item" id="citron">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/citron.png" alt="macaron citron">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Citron</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, <strong>lait</strong>, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, citron, colorant jaune (E102).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CLEMENTINE AMENDE -->
+                <li class="cs-item" id="clementine-amende">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/clementine_amende.png" alt="macaron clémentine amende">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Clémentine Amende</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, <strong>lait</strong>, clémentine bio, <strong>amandes</strong> grillés, colorant (E102) et (E129).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON COCO -->
+                <li class="cs-item" id="coco">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/coco.png" alt="macaron coco">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Coco</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, beurre de cacao, poudre de <strong>lait</strong> entier, poudre de <strong>lait</strong> écrémé, émulsifiant, lécithine de tournesol, carraghénanes, gomme de xanthane, stabilisant (E491), noix de coco râpé, crème de coco.
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON COMBAVA -->
+                <li class="cs-item" id="combava">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/combava.png" alt="macaron combava">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Combava</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, combava, colorant (E102), (E131) et (E129).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON COQUELICOT -->
+                <li class="cs-item" id="coquelicot">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/coquelicot.png" alt="macaron coquelicot">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Coquelicot</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) ET (E415), eau, sucre matières grasses : acides gras saturés, glucides, sucre, <strong>lait</strong>, protéines, sel, arôme naturel de coquelicot, <strong>graines de sésame noir</strong>, colorant (E129).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON COINTREAU -->
+                <li class="cs-item" id="cointreau">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/cointreau.png" alt="macaron cointreau">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Cointreau</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, beurre de cacao, poudre de <strong>lait</strong> entier, émulsifiant, lécithine de <strong>soja</strong>, arôme naturel d’orange, colorant (E160), arôme naturel de vanille, cointreau, colorant (E102) et (E129).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON FLEUR D'ORANGER -->
+                <li class="cs-item" id="fleur-oranger">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/fleur_oranger.png" alt="macaron fleur d'oranger">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Fleur d'oranger</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            : Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) ET (E415), eau, sucre, beurre de cacao, poudre de <strong>lait</strong> entier, poudre de <strong>lait</strong> écrémé, émulsifiant, lécithine de tournesol, carraghénanes, sorbate de potassium, acides lactique, éthanol, antioxydant, alpha-tocophérol, colorant (E102).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON FRAISE -->
+                <li class="cs-item" id="fraise">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/fraise.png" alt="macaron fraise">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Fraise</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, sucre, <strong>lait</strong>, protéines, sel, fraise, colorant (E129).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON FRAISE BASILIC -->
+                <li class="cs-item" id="fraise-basilic">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/fraise-basilic.png" alt="macaron fraise basilic">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Fraise Basilic</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, fraise, basilic frais, colorant (E102), (E129) et (E131).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON FRAMBOISE -->
+                <li class="cs-item" id="framboise">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/framboise.png" alt="macaron framboise">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Framboise</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, framboise, colorant (E122).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON KALAMANSI -->
+                <li class="cs-item" id="kalamansi">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/kalamansi.png" alt="macaron kalamansi">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Kalamansi</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, kalamansi, colorant (E102) et (E131).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON AUX 2 CHOCOLATS -->
+                <li class="cs-item" id="aux-deux-chocolats">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/2chocolats.png" alt="macaron aux deux chocolats">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Aux Deux Chocolats</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, chocolat supérieur au <strong>lait</strong> 40% (sucre, <strong>lait</strong> en poudre, beurre de cacao, pâte de cacao, émulsifiants : lécithine de <strong>soja</strong>, vanilline, sucre), <strong>lait</strong> écrémé en poudre, huile de palme, beurre concentré, crème de <strong>lait</strong>, stabilisant carraghénanes, colorant (E102), (E129) et (E151).
+                        </p>
+                    </div>
+                </li>
+                
+                <!-- MACARON CEREALE CROUSTILLANTE AU CHOCOLAT AU LAIT -->
+                <li class="cs-item" id="cereale-croustillante">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/cereale_crousti.png" alt="macaron céréale croustillante">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Céréale Croustillante</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, beurre de cacao pâte de cacao, poudre de <strong>lait</strong> écrémé, matières grasse de <strong>lait</strong>, émulsifiant : lécithine de tournesol, arôme vanille, chocolat au <strong>lait</strong>, beurre pâtissier, petit <strong>lait</strong> en poudre, <strong>lactose</strong> céréales croustillantes : farine de <strong>blé</strong>, <strong>gluten de blé</strong>, farine de blé maltée, poudre à lever (carbonate de sodium), huile de palme, huile de karité, sirop de glucose, gomme d’acacias, colorant (E102), (E129) et (E151).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON LAVANDE -->
+                <li class="cs-item" id="lavande">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/lavande.png" alt="macaron lavande">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Lavande</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, arôme de lavande (monopropylene glycol), colorant (E151), (E199) et (E132).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON LICHI FRAMBOISE -->
+                <li class="cs-item" id="lichi-framboise">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/lichi_framboise.png" alt="macaron lichi framboise">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Lichi Framboise</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, Litchi, framboise, colorant (E122).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON MARMELADE AUX AGRUMES -->
+                <li class="cs-item" id="marmelade">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/marmelade.png" alt="macaron marmelade aux agrumes">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Marmelade Aux Agrumes</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, Citron vert, citron jaune, orange, colorant (E102).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON MELON -->
+            <!--<li class="cs-item">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="./images/melon.png" alt="macaron melon">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Melon</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            lalalala
+                        </p>
+                    </div>
+                </li> -->
+                <!-- MACARON MENTHE CHOCOLAT -->
+                <li class="cs-item" id="menthe-chocolat">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/menthe_choco.png" alt="macaron menthe chocolat">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Menthe Chocolat</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, pâte de cacao, beurre de cacao, émulsifiants : lécithine de tournesol, arôme naturel, crème de <strong>lait</strong>, stabilisant carraghénanes colorant (E102) et (E131).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON MOJITO -->
+                <li class="cs-item" id="mojito">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/mojito.png" alt="macaron mojito">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Mojito</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, protéines, sel, <strong>lait</strong>, citron vert, menthe fraiche, rhum blanc, colorant (E102) et (E131).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON MYRTILLE -->
+                <li class="cs-item" id="myrtille">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/myrtille.png" alt="macaron myrtille">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Myrtille</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, purée de myrtille, myrtille, colorant alimentaire (E122) et (E151).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON PATE A TARTINER -->
+                <li class="cs-item" id="pate-tartiner">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/pate_tartiner.png" alt="macaron pâte à tartiner">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Pâte à tartiner</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, huile de palme, noisette, <strong>lait</strong> écrémé en poudre, cacao maigre, émulsifiant lécithine de soja, vanilline, sans gluten, colorant (E102), (E129) et (E151).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON PAMPLEMOUSSE -->
+                <li class="cs-item" id="pamplemousse">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/pamplemousse.png" alt="macaron pamplemousse">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Pamplemousse</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre matières grasses : acides gras saturés, glucides, protéines, sel, <strong>lait</strong>, pamplemousse, colorant (E102) et (E129).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON PISTACHE -->
+                <li class="cs-item" id="pistache">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/pistache.png" alt="macaron pistache">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Pistache</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, <strong>lait</strong>, matières grasses : acides gras saturés, glucides, protéines, sel, dextrose, noix de cajou, pistache, huile de tournesol, amidon de mais, arômes, émulsifiant : lécithine de <strong>soja</strong>, colorants (E100) et (E141), colorant (E102), (E129) et (E131).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON REGLISSE -->
+            <!--<li class="cs-item">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="./images/reglisse.png" alt="macaron réglisse">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Réglisse</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’amande, sucre glace, blanc d’oeufs, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, lait, poudre de réglisse, acide glycyrrhizique, colorant (E102), (E122), (E131) et (E151).
+                        </p>
+                    </div>
+                </li> -->
+                <!-- MACARON ROSE -->
+                <li class="cs-item" id="rose">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/rose.png" alt="macaron rose">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Rose</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202) et (E211), épaississant (E402) et (E415), eau, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, <strong>lait</strong>, arôme de rose, sirop de rose, colorant (E122).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON PRALINE FEUILLETES -->
+                <li class="cs-item" id="praline-feuilletes">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/praline_feuilletes.png" alt="macaron praliné feuilletés">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Praliné Feuilletés</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, praliné émiettés et naturel, farine de <strong>blé</strong>, extrait de malt (<strong>orge</strong>), poudre à lever (E500), chocolat de couverture au <strong>lait</strong>, poudre de <strong>lait</strong> entier, arôme naturelle de vanille, <strong>noisettes</strong>, <strong>amandes</strong>, <strong>fruits à coques</strong>, émulsifiant : lécithine de <strong>soja</strong> colorant (E102), (E129) et (E151), <strong>pistache</strong>.
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON NOUGAT -->
+                <li class="cs-item" id="nougat">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/nougat.png" alt="macaron nougat">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Nougat</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), sirop de glucose, miel, sucre, arôme naturel de vanille, beurre de cacao, <strong>lait</strong>, colorant (E102), (E129) et (E151).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON SPECULOOS -->
+                <li class="cs-item" id="speculoss">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/speculoss.png" alt="macaron Spéculoos">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Spéculoos</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, matières grasses : acides gras saturés, glucides, sucre, <strong>lait</strong>, protéines, sel, farine de <strong>blé</strong>, huile végétale de palme et de colza, sirop de sucre Candy, poudre à lever : carbonate acide de sodium, farine de <strong>soja</strong>, sel, cannelle.
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON BONBON A LA FRAISE -->
+                <li class="cs-item" id="bonbon-fraise">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/bonbon_fraise.png" alt="macaron bonbon à la fraise">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Bonbon à la Fraise</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, crème au beurre, crème liquide, <strong>lait</strong>, stabilisant carragénhanes, sirop de glucose, gélatine, acidifiant, acide citrique, arôme : concentrés de fruits et de plantes : radis, carottes, carthame, citron, sirop de sucre avertis, colorant (E129). 
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON VANILLE -->
+                <li class="cs-item" id="vanille">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/vanille.png" alt="macaron vanille">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Vanille</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, <strong>lait</strong>, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, monopropylène glycol, substances aromatisantes, colorant alimentaire (E122) et (E151).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON YUZU -->
+                <li class="cs-item" id="yuzu">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/yuzu.png" alt="macaron yuzu">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Yuzu</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, <strong>lait</strong>, matières grasses : acides gras saturés, glucides, sucre, protéines, sel, yuzu, colorant (E102), <strong>pistache</strong>.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <div  id="liste-sales">
+                <span class="cs-topper">LISTE DES</span>
+                <h2 class="cs-title">SALÉS</h2>
+            </div>
+            <ul id="productList" class="cs-card-group">
+                <!-- MACARON BLEU & NOIX -->
+                <li class="cs-item" id="bleu&noix">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/amende.png" alt="macaron bleu & noix">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Bleu & Noix</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, <strong>lait</strong> pasteurisé de vache, sel, ferments lactiques, chlorure de calcium, colorant (E132).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON CHEVRE FIGUE -->
+                <li class="cs-item" id="chevre-figue">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/amende.png" alt="macaron  chèvre figue">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Chèvre Figue</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, <strong>lait</strong> de chèvre entier cru, sel, présure, ferments, colorant (E132) et charbon végétal, figue.
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON FOIE GRAS -->
+                <li class="cs-item" id="foie-gras">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/amende.png" alt="macaron foie gras">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Foie Gras</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, <strong>lait</strong>, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, protéines, sel, magrets de canard, sel, poivre, épices, antioxydants (E301), conservateur (E250), ferments, colorant (E129) et (E133).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON MAGRET DE CANARD -->
+                <li class="cs-item" id="magret-canard">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/amende.png" alt="macaron magret de canard">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Magret de Canard</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, <strong>lait</strong>, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, sucre, matières grasses : acides gras saturés, glucides, protéines, sel, magrets de canard, sel, poivre, épices, antioxydants (E301), conservateur (E250), ferments, colorant (E129) et (E133).
+                        </p>
+                    </div>
+                </li>
+                <!-- MACARON SAUMON FUME -->
+                <li class="cs-item" id="saumon-fume">
+                    <picture class="cs-picture"  aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="../images/amende.png" alt="macaron saumon fumé">
+                    </picture>
+                    <div class="cs-info">
+                        <h3 class="cs-h3">
+                            <span class="cs-name">Saumon Fumé</span>
+                        </h3>
+                        <p class="cs-item-p">
+                            Poudre d’<strong>amande</strong>, sucre glace, blanc d’<strong>oeufs</strong>, amidon, correcteur d’acidités (E330) et (E331), conservateur (E202), épaississant (E402) et (E415), eau, matières grasses : acides gras saturés, glucides, sucre, <strong>lait</strong>, protéines, sel, <strong>saumon</strong>, citron, aneth, colorant (E102) et (E129).
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>   
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  FOOTER                      -->
+    <!-- ============================================ -->
+    <footer id="footer">
+        <div class="cs-container">
+            <div class="cs-top">
+                <a aria-label="go back to home" class="cs-logo" href="../index.html">
+                    <img class="cs-logo-img" loading="lazy" decoding="async" src="../images/logo-white.png" alt="logo">
+                </a>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a href="../index.html#tableau" class="cs-link">Notre Gamme</a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="./about.html" class="cs-link">À propos de nous</a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="./parfums.html" class="cs-link">Parfums/Allergies</a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="../index.html#boutiques" class="cs-link">Boutiques</a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="./galerie" class="cs-link">Galerie</a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="../index.html#contact" class="cs-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cs-bottom">
+                <ul class="cs-social">
+                    <li class="cs-social-li">
+                        <a href="https://m.facebook.com/people/Les-Macarons-Hottekiet-Rue-Andr%C3%A9-Gardot-Rue-Saint-Aubin/100084830072876/" class="cs-social-link" aria-label="facebook" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="../images/facebook.png" alt="icon" loading="lazy" decoding="async">
+                        </a>
+                    </li>
+                    <li class="cs-social-li">
+                        <a href="https://www.instagram.com/macarons_hottekiet/" class="cs-social-link" aria-label="instagram" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="../images/instagram.png" alt="icon" loading="lazy" decoding="async">
+                        </a>
+                    </li>
+                </ul>
+                <span class="cs-copyright">
+                    <a href="https://www.linkedin.com/in/bgautreau"  target="_blank" class="cs-copyright-link" rel="noopener">Conçu par Baptiste GAUTREAU - Tout droit réservé</a><br>
+                    <a href="./declaration-cookies.html" class="cs-copyright-link" target="_blank" rel="noopener">Déclaration des cookies</a><br>
+                    <a href="./mentions-legales.html" class="cs-copyright-link" target="_blank" rel="noopener">Mentions Légales</a>
+                </span>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <img loading="lazy" decoding="async" src="../images/menu1.png" alt="fond macaron">
+        </picture>
+    </footer>
+
+    <!-- ============================================ -->
+    <!--                  LIENS JAVASCRIPT            -->
+    <!-- ============================================ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./js/recherche.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>
