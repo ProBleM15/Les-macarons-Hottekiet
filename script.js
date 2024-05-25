@@ -1,5 +1,5 @@
+// INDEX.HTML : BARRE DE NAVIGATION
 document.addEventListener('DOMContentLoaded', function() {
-    // Fonction de fermeture du menu de navigation mobile
     function closeMobileNav() {
         const CSnavbarMenu = document.querySelector('#cs-navigation');
         const CSbody = document.body;
@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         CSbody.classList.remove('cs-open');
     }
 
-    // Ajouter un récepteur d'événements au bouton du menu hamburger
     const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
     if (CShamburgerMenu) {
         CShamburgerMenu.addEventListener('click', function(event) {
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fermer la navigation mobile lorsqu'on clique sur un lien de navigation
     const navLinks = document.querySelectorAll('#cs-navigation .cs-li-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
@@ -28,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Fermer la navigation mobile en cliquant n'importe où sur la page après qu'elle a été ouverte
     document.addEventListener('click', function() {
         const CSbody = document.body;
         if (CSbody.classList.contains('cs-open')) {
@@ -36,18 +33,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Fermer la navigation mobile en appuyant sur la touche "Echap".
     document.addEventListener('keydown', function(event) {
         const CSbody = document.body;
         if (event.key === 'Escape' && CSbody.classList.contains('cs-open')) {
             closeMobileNav();
         }
     });
+
+    setupSlider('.slider-unite1', '.prev1', '.next1');
+    setupSlider('.slider-unite2', '.prev2', '.next2');
 });
 
-// NOTRE GAMME DE MACARONS
+// INDEX.HTML : CARTE GOOGLE MAP (quand ça ne marche pas)
+function mapError() {
+    document.getElementById('map-error').style.display = 'block';
+}
+
+// INDEX.HTML : NOTRE GAMME DE MACARONS
 document.addEventListener('DOMContentLoaded', function() {
-    // Tableaux contenant les chemins des images au survol pour chaque produit
     var hoverImages = [
         ['./images/pyramide100.png'], 
         ['./images/pyramide100.png'], 
@@ -68,26 +71,201 @@ document.addEventListener('DOMContentLoaded', function() {
         ['./images/pyramide100.png'], 
         ['./images/pyramide100.png']  
     ];
-    // Sélection de tous les éléments .product-card
     var productCards = document.querySelectorAll('.product-card');
-    // Parcourir tous les éléments .product-card
     productCards.forEach(function(card, index) {
-        // Création de l'élément img pour l'image au survol
         var hoverImage = document.createElement('img');
         hoverImage.classList.add('hover-image');
-
-        // Sélection aléatoire d'une image au survol pour ce produit
         var randomIndex = Math.floor(Math.random() * hoverImages[index].length);
         hoverImage.src = hoverImages[index][randomIndex];
         hoverImage.alt = 'Image au survol';
-
-        // Ajout de l'image au survol à la figure de la carte du produit
         var cardBanner = card.querySelector('.card-banner');
         cardBanner.appendChild(hoverImage);
     });
 });
 
-// CARTE GOOGLE MAP QUAND NE S'AFFICHE PAS 
-function mapError() {
-    document.getElementById('map-error').style.display = 'block';
+// INDEX.HTML : SLIDE MACARONS UNITES
+function setupSlider(sliderSelector, prevBtnSelector, nextBtnSelector) {
+    const slider = document.querySelector(sliderSelector);
+    if (!slider) return;
+
+    const slides = document.querySelectorAll(`${sliderSelector} .slide-unite`);
+    const prevBtn = document.querySelector(prevBtnSelector);
+    const nextBtn = document.querySelector(nextBtnSelector);
+    let currentIndex = 0;
+    let interval;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    function showSlide(index) {
+        const slideWidth = slides[0].offsetWidth + 10;
+        slider.style.transition = 'transform 0.5s ease';
+        slider.style.transform = `translateX(-${slideWidth * index}px)`;
+        currentIndex = index;
+    }
+    function nextSlide() {
+        if (currentIndex < slides.length - 3) {
+            showSlide(currentIndex + 1);
+        } else {
+            showSlide(0);
+        }
+    }
+    function prevSlide() {
+        if (currentIndex > 0) {
+            showSlide(currentIndex - 1);
+        } else {
+            showSlide(slides.length - 3);
+        }
+    }
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    function startAutoSlide() {
+        interval = setInterval(nextSlide, 2500);
+    }
+    function stopAutoSlide() {
+        clearInterval(interval);
+    }
+    slider.addEventListener('mouseover', stopAutoSlide);
+    slider.addEventListener('mouseout', startAutoSlide);
+    slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+    slider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleGesture();
+    });
+    function handleGesture() {
+        const gestureThreshold = 50;
+        const gestureDistance = touchStartX - touchEndX;
+
+        if (gestureDistance > gestureThreshold) {
+            nextSlide();
+        } else if (gestureDistance < -gestureThreshold) {
+            prevSlide();
+        }
+    }
+    startAutoSlide();
 }
+
+// INDEX.HTML : FORMULAIRE DE CONTACT
+(function () {
+    emailjs.init("CWjD-bBgvT0VEO-5JAzjl");
+})();
+
+const contactForm = document.querySelector('.cs-form');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const phoneInput = document.getElementById('phone');
+const messageInput = document.getElementById('message');
+const messageContainer = document.getElementById('mail_envoye');
+
+function validateForm(event) {
+    event.preventDefault();
+    if (nameInput.value.trim() === '' || emailInput.value.trim() === '' || phoneInput.value.trim() === '' || messageInput.value.trim() === '') {
+        showMessage('Veuillez remplir tous les champs.');
+        return;
+    }
+    if (!isValidEmail(emailInput.value)) {
+        showMessage('Veuillez saisir une adresse e-mail valide.');
+        return;
+    }
+    sendMail();
+}
+function showMessage(message) {
+    messageContainer.textContent = message;
+    messageContainer.classList.add('mail-envoye');
+    messageContainer.style.display = 'block';
+    setTimeout(() => {
+        messageContainer.style.display = 'none';
+    }, 10000);
+}
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+if (contactForm) {
+    contactForm.addEventListener('submit', validateForm);
+}
+function sendMail() {
+    const userID = 'T_xDrTWQ0nkvJxOTD';
+    const serviceID = 'mail';
+    const templateID = 'template_i3gqnou';
+    const params = {
+        from_name: nameInput.value,
+        from_email: emailInput.value,
+        phone: phoneInput.value,
+        message: messageInput.value,
+        sender_email: emailInput.value,
+        sender_phone: phoneInput.value
+    };
+    emailjs.send(serviceID, templateID, params, userID)
+        .then((response) => {
+            console.log('Mail envoyé avec succès !', response);
+            nameInput.value = '';
+            emailInput.value = '';
+            phoneInput.value = '';
+            messageInput.value = '';
+            showMessage('Votre message a été envoyé avec succès.');
+        })
+        .catch((error) => {
+            console.error('Error sending email:', error);
+            showMessage('Une erreur s\'est produite lors de l\'envoi du message. Veuillez réessayer.');
+        });
+}
+
+// ./PAGES-EXT/PARFUMS.HTML (RECHERCHE UNITE MACARON)
+$(document).ready(function() {
+    if ($('#searchInput').length > 0) {
+        $('#searchInput').autocomplete({
+            source: function(request, response) {
+                var searchTerm = request.term.toLowerCase();
+                var suggestions = [];
+
+                $('.cs-item').each(function() {
+                    var name = $(this).find('.cs-name').text().trim().toLowerCase();
+                    var image = $(this).find('.cs-picture img').attr('src');
+                    var id = $(this).attr('id');
+
+                    if (name.startsWith(searchTerm)) {
+                        suggestions.push({
+                            label: '<div class="suggestion-item" data-page="#' + id + '"><img src="' + image + '" alt="' + name + '"><span>' + name + '</span></div>',
+                            value: name,
+                            page: '#' + id
+                        });
+                    }
+                });
+                response(suggestions);
+            },
+            select: function(event, ui) {
+                var selectedPage = ui.item.page;
+                if (selectedPage) {
+                    if (!event.isDefaultPrevented()) {
+                        window.location.href = selectedPage;
+                        $('#searchInput').val('');
+                    }
+                    return false;
+                }
+            }
+        });
+
+        if ($.ui && $.ui.autocomplete) {
+            $('#searchInput').autocomplete('instance')._renderItem = function(ul, item) {
+                return $('<li>')
+                    .append(item.label)
+                    .appendTo(ul);
+            };
+        }
+
+        $(document).on('click touchstart', '.suggestion-item', function(event) {
+            var selectedPage = $(this).data('page');
+            if (selectedPage) {
+                if (!event.isDefaultPrevented()) {
+                    window.location.href = selectedPage;
+                    $('#searchInput').val('');
+                }
+            }
+        });
+
+        $('#searchInput').on('touchmove', function(event) {
+            event.preventDefault();
+        });
+    }
+});
