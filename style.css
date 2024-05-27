@@ -786,9 +786,11 @@ a {
 .shop-info .cs-title {
   margin-bottom: 30px;
 }
+
 .map-container {
   margin-top: 5px;
 }
+
 #map-error {
   display: none;
 }
@@ -799,6 +801,7 @@ a {
 #boutiques {
   margin-top: 5em;
 }
+
 .container-horaire {
   --couleur-fond: #f4f4f4;
   --couleur-texte: #333;
@@ -816,6 +819,7 @@ a {
 .container-horaire .cs-topper {
   text-align: center;
 }
+
 .container-horaire .cs-title {
   text-align: center;
 }
@@ -826,7 +830,7 @@ table {
 }
 
 th, td {
-  padding: 15px;
+  padding: 30px;
   text-align: center;
   border-bottom: 1px solid var(--couleur-separation);
   font-family: 'Montserrat', sans-serif;
@@ -838,6 +842,16 @@ th {
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.container-horaire td span {
+  display: block;
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+.container-horaire td span:last-child {
+  margin-bottom: 0;
 }
 
 .jour {
@@ -852,7 +866,7 @@ tr:nth-child(even) {
 
 @media screen and (max-width: 768px) {
   .horaire {
-      display: block;
+    display: block;
   }
   .container-horaire {
     text-align: center;
@@ -861,8 +875,8 @@ tr:nth-child(even) {
 
 @media screen and (min-width: 769px) {
   .horaire {
-      display: flex;
-      justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -1473,71 +1487,71 @@ tr:nth-child(even) {
 <--- -------------------------- -*/
 @media only screen and (min-width: 0rem) {
   #about {
-      text-align: center;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   #about .story {
-      text-align: center;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   #about .cs-topper {
-      font-size: var(--topperFontSize);
-      line-height: 1.2em;
-      text-transform: uppercase;
-      text-align: inherit;
-      letter-spacing: 0.1em;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.25rem;
-      display: block;
-      padding-top: 140px;
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+    padding-top: 140px;
   }
   #about .cs-title {
-      font-size: var(--headerFontSize);
-      font-weight: 900;
-      line-height: 1.2em;
-      text-align: center;
-      max-width: 43.75rem;
-      margin: 0 0 1rem 0;
-      color: var(--headerColor);
-      position: relative;
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
   }
   #about .cs-h4 {
-      margin-bottom: 10px; 
-      padding-top: 20px;
+    margin-bottom: 10px; 
+    padding-top: 20px;
   }
   #about .cs-text {
-      font-size: var(--bodyFontSize);
-      line-height: 1.5em;
-      width: calc(100% - 30px); 
-      max-width: 40.625rem;
-      color: var(--bodyTextColor);
-      padding-top: 20px; 
-      padding-bottom: 5px; 
-      font-family: 'Montserrat', sans-serif;
-      text-align: justify;
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    width: calc(100% - 30px); 
+    max-width: 40.625rem;
+    color: var(--bodyTextColor);
+    padding-top: 20px; 
+    padding-bottom: 5px; 
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
   }
   #about .story .cs-text {
-      font-size: var(--bodyFontSize);
-      line-height: 1.5em;
-      width: calc(100% - 30px); 
-      max-width: 40.625rem;
-      color: var(--bodyTextColor);
-      padding-top: 20px; 
-      padding-bottom: 5px; 
-      font-family: 'Montserrat', sans-serif;
-      text-align: justify;
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    width: calc(100% - 30px); 
+    max-width: 40.625rem;
+    color: var(--bodyTextColor);
+    padding-top: 20px; 
+    padding-bottom: 5px; 
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
   }
   #about .asterisk {
-      font-size: 1.5rem;
-      margin-top: 0.625rem;
-      margin-bottom: 0.625rem; 
+    font-size: 1.5rem;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem; 
   }
 }
 .patron {
@@ -1557,8 +1571,8 @@ tr:nth-child(even) {
 
 @media screen and (max-width: 600px) {
   .patron img {
-      width: 80vw; 
-      max-width: none;
+    width: 80vw; 
+    max-width: none;
   }
 }
 .patron-name {
@@ -1569,215 +1583,213 @@ tr:nth-child(even) {
 @media only screen and (min-width: 0rem) {
   #slide1,
   #slide2 {
-      padding: var(--sectionPadding);
+    padding: var(--sectionPadding);
   }
   #slide1 .cs-container,
   #slide2 .cs-container {
-      width: 100%;
-      max-width: 34.375rem;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(3rem, 6vw, 4rem);
+    width: 100%;
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
   }
   #slide1 .cs-content,
   #slide2 .cs-content {
-      text-align: left;
-      width: 100%;
-      max-width: 32.625rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   #slide1 .cs-text,
   #slide2 .cs-text {
-      margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
-      text-align: justify;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
   }
   #slide1 .cs-text:last-of-type,
   #slide2 .cs-text:last-of-type {
-      margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
   #slide1 .cs-button-solid,
   #slide2 .cs-button-solid {
-      font-size: 1rem;
-      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-      text-decoration: none;
-      font-weight: 700;
-      text-align: center;
-      margin: 0;
-      color: #fff;
-      min-width: 9.375rem;
-      padding: 0 1.5rem;
-      background-color: var(--primary);
-      display: inline-block;
-      position: relative;
-      z-index: 1;
-      box-sizing: border-box;
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
   }
   #slide1 .cs-button-solid:before,
   #slide2 .cs-button-solid:before {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 0%;
-      background: #000;
-      opacity: 1;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transition: width 0.3s;
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
   }
   #slide1 .cs-button-solid:hover:before,
   #slide2 .cs-button-solid:hover:before {
-      width: 100%;
+    width: 100%;
   }
   #slide1 .cs-li,
   #slide2 .cs-li {
-      list-style: none;
-      margin: 0 0 0.5rem 0;
-      color: var(--bodyTextColor);
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 0.75rem;
-      position: relative;
+    list-style: none;
+    margin: 0 0 0.5rem 0;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.75rem;
+    position: relative;
   }
   #slide1 .cs-li:before,
   #slide2 .cs-li:before {
-      content: "";
-      width: 1rem;
-      height: 1rem;
-      margin-top: 0.1875rem;
-      margin-left: -0.5rem;
-      background: var(--secondary);
-      border-radius: 50%;
-      display: block;
-      flex: none;
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.1875rem;
+    margin-left: -0.5rem;
+    background: var(--secondary);
+    border-radius: 50%;
+    display: block;
+    flex: none;
   }
   #slide1 .cs-info,
   #slide2 .cs-info {
-      width: 100%;
-      padding-top: 2rem;
-      border-top: 1px solid #e8e8e8;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 0.75rem;
-      position: relative;
+    width: 100%;
+    padding-top: 2rem;
+    border-top: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
   }
   #slide1 .cs-icon,
   #slide2 .cs-icon {
-      width: 3.25rem;
-      height: auto;
-      display: block;
-      transition: transform 0.3s;
+    width: 3.25rem;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
   }
   #slide1 .cs-flex,
   #slide2 .cs-flex {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
   #slide1 .cs-name,
   #slide2 .cs-name {
-      font-size: clamp(1.25rem, 4vw, 1.5625rem);
-      line-height: 1.2em;
-      font-weight: 700;
-      margin: 0;
-      color: var(--headerColor);
-      display: block;
+    font-size: clamp(1.25rem, 4vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--headerColor);
+    display: block;
   }
   #slide1 .cs-desc,
   #slide2 .cs-desc {
-      font-size: 0.875rem;
-      line-height: 1.5em;
-      margin: 0;
-      color: var(--bodyTextColor);
-      display: block;
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+    display: block;
   }
   #slide1 .cs-image-group,
   #slide2 .cs-image-group {
-      font-size: min(2.09vw, 0.789em);
-      width: 43.375em;
-      height: 43em;
-      display: block;
-      position: relative;
-      z-index: 1;
+    font-size: min(2.09vw, 0.789em);
+    width: 43.375em;
+    height: 43em;
+    display: block;
+    position: relative;
+    z-index: 1;
   }
   #slide1 .cs-picture,
   #slide2 .cs-picture {
-      width: 33.875em;
-      height: 38em;
-      position: absolute;
-      bottom: 0;
-      left: 5.5em;
-      z-index: -1;
+    width: 33.875em;
+    height: 38em;
+    position: absolute;
+    bottom: 0;
+    left: 5.5em;
+    z-index: -1;
   }
   #slide1 .cs-picture img,
   #slide2 .cs-picture img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
   }
   #slide1 .cs-stripes,
   #slide2 .cs-stripes {
-      width: 32.625em;
-      height: auto;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -2;
+    width: 32.625em;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
   }
   #slide1 .cs-graphic,
   #slide2 .cs-graphic {
-      width: 11.5em;
-      height: auto;
-      display: block;
-      position: absolute;
-      bottom: 5em;
-      right: 0;
+    width: 11.5em;
+    height: auto;
+    display: block;
+    position: absolute;
+    bottom: 5em;
+    right: 0;
   }
 }
 
 @media only screen and (min-width: 64rem) {
   #slide1 .cs-container,
   #slide2 .cs-container {
-      max-width: 80rem;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   #slide1 .cs-image-group,
   #slide2 .cs-image-group {
-      font-size: min(1.2vw, 1em);
-      flex: none;
+    font-size: min(1.2vw, 1em);
+    flex: none;
   }
 }
 
 /* COTE DROITE */
 @media only screen and (min-width: 0rem) {
   #slide2 .cs-picture {
-      right: 5.5em;
-      left: auto;
+    right: 5.5em;
+    left: auto;
   }
   #slide2 .cs-stripes {
-      right: 0;
-      left: auto;
+    right: 0;
+    left: auto;
   }
   #slide2 .cs-graphic {
-      left: 0;
-      right: auto;
+    left: 0;
+    right: auto;
   }
 }
 @media only screen and (min-width: 64rem) {
   #slide2 .cs-image-group {
-      order: 2;
+    order: 2;
   }
 }
 
@@ -1931,7 +1943,6 @@ tr:nth-child(even) {
     z-index: 1;   
   }
   #menu:before {
-    content: "";
     height: 100%;
     width: 100%;
     opacity: 0.08;
@@ -1986,7 +1997,6 @@ tr:nth-child(even) {
     transform: translateY(-50%);
   }
   #menu .cs-wrapper:after {
-    content: "";
     width: clamp(5.625rem, 4vw, 9.6875rem);
     height: 1px;
     margin-left: clamp(0.75rem, 2vw, 1.5rem);
@@ -2018,7 +2028,6 @@ tr:nth-child(even) {
     transition: color 0.3s;
   }
   #menu .cs-button-solid:before {
-    content: "";
     position: absolute;
     height: 100%;
     width: 0%;
@@ -2083,7 +2092,6 @@ tr:nth-child(even) {
     position: relative;
     gap: 0.75rem;
   }
-
   #menu .cs-item-p {
     font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: 1.1em;
