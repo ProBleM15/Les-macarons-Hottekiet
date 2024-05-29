@@ -871,8 +871,10 @@ tr:nth-child(even) {
   .container-horaire {
     text-align: center;
   }
+  .container-horaire {
+    width: 100%;
+  }
 }
-
 @media screen and (min-width: 769px) {
   .horaire {
     display: flex;
@@ -1985,7 +1987,6 @@ tr:nth-child(even) {
     position: relative;
   }
   #menu .cs-wrapper:before {
-    content: "";
     width: clamp(5.625rem, 4vw, 9.6875rem);
     height: 1px;
     margin-right: clamp(0.75rem, 2vw, 1.5rem);
