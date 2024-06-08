@@ -269,3 +269,62 @@ $(document).ready(function() {
         });
     }
 });
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const changeLanguageBtn = document.getElementById('changeLanguageBtn');
+    const flagIcon = document.getElementById('flagIcon');
+    let currentLanguage = 'fr';
+
+    // Vérification du localStorage pour la langue sauvegardée
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+        currentLanguage = savedLanguage;
+    }
+
+    // Initialisation de la langue et du drapeau au chargement de la page
+    changeLanguage(currentLanguage);
+    updateFlagIcon(currentLanguage);
+
+    // Gestion du changement de langue au clic sur le bouton
+    changeLanguageBtn.addEventListener('click', function() {
+        currentLanguage = (currentLanguage === 'en') ? 'fr' : 'en';
+        changeLanguage(currentLanguage);
+        updateFlagIcon(currentLanguage);
+
+        // Sauvegarde de la langue sélectionnée dans le localStorage
+        localStorage.setItem('language', currentLanguage);
+    });
+
+    function changeLanguage(language) {
+        const elements = document.querySelectorAll('[data-en]');
+        elements.forEach(element => {
+            element.textContent = element.getAttribute(`data-${language}`);
+        });
+    }
+
+    function updateFlagIcon(language) {
+        let imagePath;
+        switch (language) {
+            case 'en':
+                imagePath = (window.location.pathname.includes('about.html')) ? '../images/flag-angleterre.png' : './images/flag-angleterre.png';
+                break;
+            case 'fr':
+            default:
+                imagePath = (window.location.pathname.includes('about.html')) ? '../images/flag-france.png' : './images/flag-france.png';
+                break;
+        }
+        flagIcon.src = imagePath;
+
+        if (language === 'en') {
+            flagIcon.alt = 'English Flag';
+        } else {
+            flagIcon.alt = 'French Flag';
+        }
+    }
+});
