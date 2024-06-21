@@ -270,61 +270,64 @@ $(document).ready(function() {
     }
 });
 
-
-
-
-
-
-
+// INDEX.HTML... : SYSTEME CHANGEMENT DE LANGUE
 document.addEventListener("DOMContentLoaded", function() {
     const changeLanguageBtn = document.getElementById('changeLanguageBtn');
     const flagIcon = document.getElementById('flagIcon');
-    let currentLanguage = 'fr';
-
-    // Vérification du localStorage pour la langue sauvegardée
-    const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage) {
-        currentLanguage = savedLanguage;
-    }
-
-    // Initialisation de la langue et du drapeau au chargement de la page
+    let currentLanguage = localStorage.getItem('language') || 'fr';
     changeLanguage(currentLanguage);
     updateFlagIcon(currentLanguage);
+    updatePlaceholders(currentLanguage);
 
-    // Gestion du changement de langue au clic sur le bouton
     changeLanguageBtn.addEventListener('click', function() {
         currentLanguage = (currentLanguage === 'en') ? 'fr' : 'en';
         changeLanguage(currentLanguage);
         updateFlagIcon(currentLanguage);
-
-        // Sauvegarde de la langue sélectionnée dans le localStorage
+        updatePlaceholders(currentLanguage);
         localStorage.setItem('language', currentLanguage);
     });
-
     function changeLanguage(language) {
-        const elements = document.querySelectorAll('[data-en]');
+        const elements = document.querySelectorAll('[data-en], [data-fr]');
         elements.forEach(element => {
-            element.textContent = element.getAttribute(`data-${language}`);
+            const text = (language === 'en') ? element.getAttribute('data-en') : element.getAttribute('data-fr');
+            element.innerHTML = text.replace(/"(.*?)"/g, '<strong>"$1"</strong>');
         });
     }
-
     function updateFlagIcon(language) {
         let imagePath;
-        switch (language) {
-            case 'en':
-                imagePath = (window.location.pathname.includes('about.html')) ? '../images/flag-angleterre.png' : './images/flag-angleterre.png';
-                break;
-            case 'fr':
-            default:
-                imagePath = (window.location.pathname.includes('about.html')) ? '../images/flag-france.png' : './images/flag-france.png';
-                break;
-        }
+        const currentPage = window.location.pathname;
+        const relativePath = (currentPage.includes('/pages-ext/') || currentPage.includes('/description-format/')) ? '../images/' : './images/';
+        imagePath = (language === 'en') ? `${relativePath}flag-angleterre.png` : `${relativePath}flag-france.png`;
         flagIcon.src = imagePath;
-
-        if (language === 'en') {
-            flagIcon.alt = 'English Flag';
-        } else {
-            flagIcon.alt = 'French Flag';
+        flagIcon.alt = (language === 'en') ? 'English Flag' : 'French Flag';
+    }
+    function updatePlaceholders(language) {
+        updatePlaceholder('searchInput', language);
+        updatePlaceholder('name', language);
+        updatePlaceholder('email', language);
+        updatePlaceholder('phone', language);
+        updatePlaceholder('message', language);
+    }
+    function updatePlaceholder(elementId, language) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            switch (elementId) {
+                case 'searchInput':
+                    element.placeholder = (language === 'en') ? 'Search by name...' : 'Rechercher par nom...';
+                    break;
+                case 'name':
+                    element.placeholder = (language === 'en') ? 'Your name, first name...' : 'Votre nom, prénom...';
+                    break;
+                case 'email':
+                    element.placeholder = (language === 'en') ? 'Your mail...' : 'Votre mail...';
+                    break;
+                case 'phone':
+                    element.placeholder = (language === 'en') ? 'Your phone number...' : 'Votre numéro de téléphone...';
+                    break;
+                case 'message':
+                    element.placeholder = (language === 'en') ? 'Write your message...' : 'Écrire votre message...';
+                    break;
+            }
         }
     }
 });
