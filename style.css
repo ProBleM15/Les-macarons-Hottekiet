@@ -391,7 +391,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
   }
   #cs-navigation .cs-li-link:before {
-    content: "";
     width: 100%;
     height: 1px;
     background: currentColor;
@@ -524,16 +523,25 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-.cs-lang-button {
+.cs-li-flag {
+  list-style-type: none; 
+}
+
+#changeLanguageBtn {
   background-color: transparent;
   border: none;
   cursor: pointer;
-}
-#flagIcon {
-  width: 45px;
-  height: auto;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5em;
+  text-decoration: none;
+  display: block;
+  position: relative;
 }
 
+#flagIcon {
+  width: 50px;
+}
 /*-- -------------------------- -->
 <---  NOTRE GAMME DE MACARONS   -->
 <--- -------------------------- -*/
