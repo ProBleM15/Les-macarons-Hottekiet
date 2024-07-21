@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande de Macarons</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>COMMANDER EN LIGNE</h1>
+        
+        <form id="commandeForm">
+            <!-- Informations personnelles -->
+            <div class="contact-form">
+                <h2>VOS COORDONNÉES</h2>
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                    <span id="nomError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                    <span id="prenomError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse e-mail :</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="emailError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Numéro de téléphone :</label>
+                    <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" required>
+                    <small>Format : 1234567890 (10 chiffres)</small>
+                    <span id="telError" class="error"></span>
+                </div>
+            </div>
+            
+            <!-- Sélection de la boîte -->
+            <div class="selection-container">
+                <label for="boiteSelect">VEUILLEZ SÉLECTIONNER VOTRE COMMANDE</label>
+                <select id="boiteSelect" name="boite" required>
+                    <option value="">-- Sélectionner votre format --</option>
+                    <option value="4" id="sachet4" data-type="sachet">SACHET DE 4 MACARONS</option>
+                    <option value="6" id="sachet6" data-type="sachet">SACHET DE 6 MACARONS</option>
+                    <option value="8" id="sachet8" data-type="sachet">SACHET DE 8 MACARONS</option>
+                    <option value="7" id="coffret7" data-type="coffret">COFFRET DE 7 MACARONS</option>
+                    <option value="12" id="coffret12" data-type="coffret">COFFRET DE 12 MACARONS</option>
+                    <option value="16" id="coffret16" data-type="coffret">COFFRET DE 16 MACARONS</option>
+                    <option value="20" id="coffret20" data-type="coffret">COFFRET DE 20 MACARONS</option>
+                    <option value="12" id="boite12" data-type="boite">BOÎTE DE 12 MACARONS</option>
+                    <option value="16" id="boite16" data-type="boite">BOÎTE DE 16 MACARONS</option>
+                    <option value="20" id="boite20" data-type="boite">BOÎTE DE 20 MACARONS</option>
+                    <option value="25" id="boite25" data-type="boite">BOÎTE DE 25 MACARONS</option>
+                    <option value="30" id="boite30" data-type="boite">BOÎTE DE 30 MACARONS</option>
+                    <option value="40" id="boite40" data-type="boite">BOÎTE DE 40 MACARONS</option>
+                    <option value="55" id="pyramide55" data-type="pyramide">PYRAMIDE DE 55 MACARONS</option>
+                    <option value="75" id="pyramide75" data-type="pyramide">PYRAMIDE DE 75 MACARONS</option>
+                    <option value="100" id="pyramide100" data-type="pyramide">PYRAMIDE DE 100 MACARONS</option>
+                    <option value="126" id="pyramide126" data-type="pyramide">PYRAMIDE DE 126 MACARONS</option>
+                    <option value="155" id="pyramide155" data-type="pyramide">PYRAMIDE DE 155 MACARONS</option>
+                    <option value="190" id="pyramide190" data-type="pyramide">PYRAMIDE DE 190 MACARONS</option>
+                </select>
+            </div>
+
+            <div id="parfumsContainer" class="parfums-container" data-capacite="0"></div>
+            
+            <div id="messageErreur" class="error"></div>
+            
+            <button type="button" onclick="validerBoite()">Valider la boîte</button>
+            
+            <div id="commandesRecap" class="commandes-recap"></div>
+            
+            <div id="total" class="total"></div>
+
+            <!-- Sélecteur de date et heure de retrait -->
+            <div class="date-time-selector date-time-box">
+                <label for="dateSelect">Date de retrait :</label>
+                <div class="input-wrapper" id="dateWrapper">
+                    <span class="placeholder-text" id="placeholderText">Sélectionnez une date</span>
+                    <input type="date" id="dateSelect" name="date" required>
+                    <span id="dateError" class="error"></span>
+                </div>
+                
+                <label for="timeSelect">Heure de retrait :</label>
+                <div class="input-wrapper" id="timeWrapper">
+                    <select id="timeSelect" name="time" required>
+                        <option value="">Sélectionnez une heure</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                        <option value="18:00">18:00</option>
+                        <option value="18:30">18:30</option>
+                    </select>
+                    <span id="timeError" class="error"></span>
+                </div>
+            </div>
+
+            <!-- Sélection du mode de paiement -->
+            <div class="payment-selector">
+                <span class="payment-label">SÉLECTIONNEZ UN MODE DE PAIEMENT :</span>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="paymentOption" value="cash" required>
+                        <span>En espèces</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentOption" value="credit-card">
+                        <span>Carte de crédit</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentOption" value="debit-card">
+                        <span>Carte de débit</span>
+                    </label>
+                </div>
+                <div id="paymentError" class="error"></div>
+            </div>
+
+            <!-- Sélection du mode de livraison -->
+            <div class="delivery-selector">
+                <label class="delivery-label">MODE DE LIVRAISON :</label>
+                <div class="delivery-options">
+                    <label class="delivery-option">
+                        <input type="radio" name="deliveryMethod" value="pickup" checked>
+                        <span>À emporter : 8 rue André Gardot, Angers</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Texte additionnel -->
+            <div class="additional-info">
+                <p>Veuillez noter que ce formulaire de demande n'est pas une confirmation de paiement de votre commande. Nous vous contacterons pour votre confirmation de commande.</p>
+                <p>Si vous avez des questions, appelez-nous au +33785931440</p>
+            </div>
+
+            <button id="submitCommande" type="submit">Valider la commande</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+</html>
